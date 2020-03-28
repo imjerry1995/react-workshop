@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react'
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
+  constructor(props){
+    super(props)
+
+  }
+
+  render(){
+    return (
+
+      <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +27,15 @@ function App() {
         </a>
       </header>
     </div>
-  );
+
+      // <div className="show-item">
+      //   <div className="item">
+      //     <p>奶茶 數量:1</p>
+      //     <button>+</button>
+      //   </div>
+      // </div>
+    )
+  }
 }
 
-export default App;
+export default App
