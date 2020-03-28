@@ -12,40 +12,65 @@ code {
     monospace;
 }
 
-  
-.container {
+body{
+  background-color: #78AAC3;
+}
+
+.app{
   width: 300px;
   height: 300px;
   border: 2px solid #222;
   margin: 100px;
+  background-color: #C4DEEE;
 }
 
-.menu-list {
+.menu-list{
   text-align: center;
   list-style: none;
   padding: 0px;
 }
 
-.menu {
+.menu{
   display: inline-block;
   border: 2px solid #222;
   width: 40%;
   list-style: none;
+  padding: 5px;
+  background-color:#EEAB73;
 }
 
-.show-item {
+.menu a {
+  text-decoration:none;
+  font-weight: bold;
+  color: #222222;
+}
+
+.show-item{
   border: 2px solid #222;
   margin: 25px;
   padding: 10px;
+  background-color: #97C8D6;
 }
 
-.item>p {
+.item > p {
   display: inline-block;
 }
 
-.done {
+.item button{
+  background-color:#EEAB73;
+  border: 2px solid #222222;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.done{
   width: 80%;
   display: inline-block;
   text-align: center;
   margin-left: 10%;
+  background-color: #F3Cd86;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow:3px 3px 0px 0px #222222;
 }

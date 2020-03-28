@@ -1,17 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'; // 引入 react
+import ReactDOM from 'react-dom'; // 引入 react-dom
+import App from './App'; // 引入 App 元件
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render( <App />,document.getElementById('root'));
+// 透過 React-dom 將 App 這個元件渲染到 html 檔中 id 為 root 的節點
+
