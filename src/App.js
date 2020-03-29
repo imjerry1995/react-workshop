@@ -12,22 +12,26 @@ class App extends Component {
 
   }
 
+  addTotal = () => {
+    this.setState({
+      total: this.state.total + 1
+    })
+  }
+
+  minusTotal = () => {
+    this.setState({
+      total: this.state.total - 1
+    })
+  }
+
   render(){
     return (
 
       <div className="show-item">
         <div className="item">
           <p>奶茶 數量: {this.state.total}</p>
-          <button onClick={()=>{
-            this.setState({
-              total: this.state.total +1
-            })
-          }}>+</button>
-          <button onClick={()=>{
-            this.setState({
-              total: this.state.total -1
-            })
-          }}>-</button>
+          <button onClick={this.addTotal}>+</button>
+          <button onClick={this.minusTotal}>-</button>
         </div>
       </div>
     )
