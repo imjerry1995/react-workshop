@@ -94,15 +94,15 @@ git checkout 分支名稱
 
 
 ## 分支步驟內容
-1. *step-0* 新的 Project
-2. *step-1* 開始做奶茶 List
-3. *step-2* 奶茶 List 完成，開始元件化奶茶List
-4. *step-3-homework* 奶茶 List 元件化完成，開始元件化其他元件
-5. *step-3-homework-solution* 畫面元件化完成
-6. *step-4* 畫面元件化完成，開始調整 Menu 並加入 LocalStorage
-7. *step-5* 調整 Menu 並加入 LocalStorage 完成，加入明細頁面
-8. *step-6* 明細頁規劃完成，開始加入 Router，並微調程式
-9. *step-7* Router加入完成，開始加入生命週期概念（串接資料）
+1. [*step-0*](https://github.com/imjerry1995/react-workshop/tree/step-0) 新的 Project
+2. [*step-1*](https://github.com/imjerry1995/react-workshop/tree/step-1) 開始做奶茶 List
+3. [*step-2*](https://github.com/imjerry1995/react-workshop/tree/step-2) 奶茶 List 完成，開始元件化奶茶List
+4. [*step-3-homework*](https://github.com/imjerry1995/react-workshop/tree/step-3-homework) 奶茶 List 元件化完成，開始元件化其他元件
+5. [*step-3-homework-solution*](https://github.com/imjerry1995/react-workshop/tree/step-3-homework-solution) 畫面元件化完成
+6. [*step-4*](https://github.com/imjerry1995/react-workshop/tree/step-4) 畫面元件化完成，開始調整 Menu 並加入 LocalStorage
+7. [*step-5*](https://github.com/imjerry1995/react-workshop/tree/step-5) 調整 Menu 並加入 LocalStorage 完成，加入明細頁面
+8. [*step-6*](https://github.com/imjerry1995/react-workshop/tree/step-6) 明細頁規劃完成，開始加入 Router，並微調程式
+9. [*step-7*](https://github.com/imjerry1995/react-workshop/tree/step-7) Router加入完成，開始加入生命週期概念（串接資料）
 
 
 ----
