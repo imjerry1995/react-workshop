@@ -22,7 +22,7 @@ class MenuList extends Component {
       <ul className="menu-list">
         {
           this.state.links.map((item,index)=>{
-            return <Menu key={index} title={item.title}/>
+            return <Menu key={index} title={item.title} link={item.link}/>
           })
         }
       </ul>

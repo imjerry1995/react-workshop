@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom';
 import MenuList from './components/MenuList'
-import ShowItem from './components/ShowItem'
-import Done from './components/Done'
 import './App.css';
 import './index.css';
 import Order from './Page/Order';
@@ -39,11 +42,15 @@ class App extends Component {
 
   render(){
     return (
-      <div className="app">
-        <MenuList />
-        <Order />
-        <Detail />
-      </div>
+      <BrowserRouter>
+          <Switch>
+            <div className="app">
+              <MenuList />
+              <Route exact path="/" component={Order} />
+              <Route path="/detail" component={Detail} />
+            </div>
+          </Switch>
+      </BrowserRouter>
     )
   }
 }

@@ -5,8 +5,25 @@ const Item  = props => {
     return (
         <div className="item">
           <p>奶茶 數量: {item.number2}</p>
-          <button onClick={item.handleAdd2}>+</button>
-          <button onClick={item.handleMinus2}>-</button>
+          
+          {
+            //三元表達式
+            props.isOrder ? 
+            <div> 
+              <button onClick={item.handleAdd2}>+</button>
+              <button onClick={item.handleMinus2}>-</button>
+            </div> : ""
+          }
+
+          {/* {
+            //短路求值法
+            props.isOrder && 
+            <div> 
+              <button onClick={item.handleAdd2}>+</button>
+              <button onClick={item.handleMinus2}>-</button>
+            </div>           
+          } */}
+          
         </div>
     )
 }

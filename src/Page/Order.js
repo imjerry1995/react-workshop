@@ -37,7 +37,7 @@ class Order extends Component { // 所有元件都繼承 Component
   render(){ //渲染函數
     return (
       <div>  {/* return 只能回傳一個根節點 */}
-        <ShowItem number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
+        <ShowItem number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal} isOrder={true}/>
         <Done handleSubmit={this.handleSubmit}/>
       </div>
     )
