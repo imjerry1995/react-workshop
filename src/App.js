@@ -27,9 +27,17 @@ class App extends Component {
 
   render(){
     return (
-
-      <div className="show-item">
-        <Item number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
+      <div class="app">
+        <ul class="menu-list">
+          <li class="menu"><a href="">點餐</a></li>
+          <li class="menu"><a href="">明細</a></li>
+        </ul>
+        <div class="show-item">
+            <div class="item">
+              <Item number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
+            </div>
+        </div>
+        <button class="done">OK</button>
       </div>
     )
   }
