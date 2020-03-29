@@ -93,8 +93,17 @@ git checkout 分支名稱
 * 若程式打錯或跟不上，可以切到目前階段的分支
 
 
-## 逐步教學及文件
-(下午寫，順便把project順好)
+## 分支步驟內容
+1. *step-0* 新的 Project
+2. *step-1* 開始做奶茶 List
+3. *step-2* 奶茶 List 完成，開始元件化奶茶List
+4. *step-3-homework* 奶茶 List 元件化完成，開始元件化其他元件
+5. *step-3-homework-solution* 畫面元件化完成
+6. *step-4* 畫面元件化完成，開始調整 Menu 並加入 LocalStorage
+7. *step-5* 調整 Menu 並加入 LocalStorage 完成，加入明細頁面
+8. *step-6* 明細頁規劃完成，開始加入 Router，並微調程式
+9. *step-7* Router加入完成，開始加入生命週期概念（串接資料）
+
 
 ----
 ## 若要建立空的 React 專案
@@ -102,7 +111,3 @@ git checkout 分支名稱
 ```
 npx create-react-app my-app
 ```
-
-
-
-
