@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Item from './components/Item'
 import logo from './logo.svg';
 import './App.css';
 import './index.css';
@@ -28,11 +29,7 @@ class App extends Component {
     return (
 
       <div className="show-item">
-        <div className="item">
-          <p>奶茶 數量: {this.state.total}</p>
-          <button onClick={this.addTotal}>+</button>
-          <button onClick={this.minusTotal}>-</button>
-        </div>
+        <Item number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
       </div>
     )
   }
