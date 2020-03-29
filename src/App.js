@@ -26,12 +26,21 @@ class App extends Component {
     })
   }
 
+  handleSubmit = () =>{
+    let itemObject = {
+      name: "奶茶",
+      total: this.state.total
+    }
+    itemObject = JSON.stringify(itemObject)
+    localStorage.setItem("total", itemObject)
+  }
+
   render(){
     return (
       <div className="app">
         <MenuList />
         <ShowItem number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
-        <Done />
+        <Done handleSubmit={this.handleSubmit}/>
       </div>
     )
   }
