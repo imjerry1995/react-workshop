@@ -11,6 +11,20 @@ class Detail extends Component { // 所有元件都繼承 Component
 
   }
 
+  componentDidMount() {
+    if (localStorage.getItem("total")) {
+      const result = JSON.parse(localStorage.getItem("total"))
+      //console.log(result)
+      this.setState({
+        total: result.total
+      })
+    }
+  }
+
+  componentDidUpdate() {
+    console.log("Detail:元件觸發更新，更新完後掛載")
+  }
+
   render(){ //渲染函數
     return (
       <ShowItem number={this.state.total} />
