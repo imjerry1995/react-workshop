@@ -4,6 +4,8 @@ import ShowItem from './components/ShowItem'
 import Done from './components/Done'
 import './App.css';
 import './index.css';
+import Order from './Page/Order';
+import Detail from './Page/Detail';
 
 class App extends Component {
   constructor(props){
@@ -39,8 +41,8 @@ class App extends Component {
     return (
       <div className="app">
         <MenuList />
-        <ShowItem number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
-        <Done handleSubmit={this.handleSubmit}/>
+        <Order />
+        <Detail />
       </div>
     )
   }
