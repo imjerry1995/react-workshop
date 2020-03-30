@@ -34,14 +34,24 @@ npm -v
 
 ## 設定 Node 及 npm 的 Proxy
 * 在自己的 user 資料夾，新增 `.gitconfig` 檔案
-* 用記事本開啟，貼上以下內容
+* 用記事本開啟，貼上以下內容，==**其中有屬於個人的資訊，要記得修改**==，再存檔
 ```
-(看下自己的電腦)
+[user]
+	name = 你的名字
+	email = NT帳號@fareastone.com.tw
+
+[https]
+    proxy = http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
+[http]
+    proxy = http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
+    sslVerify = false
 ```
 * 同樣在 user 資料夾，新增 `.npmrc` 檔案
-* 用記事本開啟，貼上以下內容
+* 用記事本開啟，貼上以下內容，==**其中有屬於個人的資訊，要記得修改**==，再存檔
 ```
-(看下自己的電腦)
+proxy=http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
+https-proxy=http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
+strict-ssl=false
 ```
 ## 安裝 VSCode
 * 至 https://code.visualstudio.com/download 下載 VSCode
@@ -50,14 +60,14 @@ npm -v
 ![](https://i.imgur.com/H4mOBbq.png)
 
 ## 建立 React 專案
-* 到 https://github.com/imjerry1995/react-workshop 下載 React 專案 （Download ZIP）
-* ![](https://i.imgur.com/EoFHLIw.png)
-
-    * 如果會下指令的可以用指令方式
+* 到 https://github.com/imjerry1995/react-workshop clone React 專案 
+* 打開自己的終端機(Command Line)，切換到自己的目錄或桌面
+* 用指令方式下載專案
     ```
     git clone https://github.com/imjerry1995/react-workshop.git
     ```
-* 接著對著剛剛下載好並解壓縮出來的`my-app`資料夾，右鍵選擇 `Open with Code`
+    ![](https://github.com/imjerry1995/react-training-fetnet/blob/master/%E6%93%B7%E5%8F%96.PNG?raw=true)
+* 接著對著剛剛抓下來的`react-workshop-master`資料夾，右鍵選擇 `Open with Code`
 ![](https://i.imgur.com/DhopdtY.png)
 * VSCode 打開之後，同時按下 Ctrl+\` ，會出現終端機
 ![](https://i.imgur.com/XlZgj6j.png)
@@ -68,11 +78,15 @@ npm -v
 * 畫面上方會跳出三個，選擇 `Git Bash`
 ![](https://i.imgur.com/zRpFzH3.png)
 
-* 在 VSCode 的終端機上下
+* 在 VSCode 的終端機上下這個指令
     ```
     npm install
     ```
-* 跑好之後，接著下
+* 跑好之後，切換到練習的分支
+    ```
+    git checkout step-0
+    ```
+* 接著下
     ```
     npm start
     ```
