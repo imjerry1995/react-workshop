@@ -1,127 +1,302 @@
-# React 環境建置
+# ES6 語法
+> ECMAScript 是 Javascript 規格標準，Javascript 隨著時間的演進，在 2015 迎來了一次重大改版，是為 (ECMAScript 6)ES6。白話來說，我們以前學的語法，由於新的函式庫興起(如 React)，已經不敷使用。ES6 新的語法可以與新的函式庫相互搭配，因此學習 ES6 式入門 React 必經之路，大家一起來學習吧!
+> 
 
-## 安裝 Node 
-* 如果已經安裝 Node ，請往下個段落檢查 Node 以及 npm 版本
-* 至 https://nodejs.org/zh-tw/download/ 網站下載 LTS 版本![](https://i.imgur.com/AMmmuqi.png)
-    * 選擇 LTS 底下的 Windows 安裝包
-    * 執行安裝檔案，一直按 Next 就好
-    * 遇到這個不需要勾選，繼續 Next
-    ![](https://i.imgur.com/MIXS2rr.png)
+> 這邊講的只是 ES6 的部分內容，尚未包含全部
+
+## 先由變數宣告說起
+### `var` 再見，來認識 `let` 與 `const`
+* 原本我們變數宣告都會使用`var`，但由於透過`var`宣告的區域變數會汙染到**全域變數**。像是宣告在像是 if-else 區域的變數也會汙染到全域變數
+
+```
+var a = 2; 
+{
+    var a = 4;
+    console.log(a); //4
+}
+console.log(a); //也是 4 
+```
+* `let`,`const` ，其存取範圍只有本身定義的區塊中。
+    ```
+    let a = 2; 
+    {
+        let a = 4;
+        console.log(a); //4
+    }
+    console.log(a); //2
+    ```
+* `let` 用在可變的變數上，`const` 用在常數上
+    ```
+    const c = 0;
+    c = 3; 
+    //會出現以下錯誤，因為常數不可以更動
+    Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:2:7
+    ```
+    * 但也是有例外，透過`const` 宣告的物件(Object)，由於存的是物件的參考，因此透過`.`選取物件的key，是可以更改該 key 的值得
+
+    ```
+    const people = {
+        name: 'Jerry',
+        age: 24
+    }
     
-### 檢查 Node 及 npm 版本
-打開 Command Line (命令提示字元)，輸入
-```
-node -v
-```
-npm 也是一樣，輸入指令
-```
-npm -v
-```
-![](https://i.imgur.com/b9jZUtS.png)
-成功會顯示版本，我們這個教學版本需要：
-==1. Node >= 8.0==
-==2. npm >= 5.6==
-
-### 如果版本不夠
-
-直接下載新版本 Node，覆蓋以前 node 安裝的路徑即可，新版本的 Node 會搭配新版的 npm ，因此不需再次更新 npm
-
-## 安裝 Git
-* 至 https://git-scm.com/ 下載 Git
-* 打開安裝檔案，基本上一直按 Next
-    * ==注意== 路徑選擇預設路徑 `C:\Program Files\Git` 否則會有錯誤
-    * ![](https://i.imgur.com/4U2VrlY.png)
-
-## 設定 Node 及 npm 的 Proxy
-* 在自己的 user 資料夾，新增 `.gitconfig` 檔案
-* 用記事本開啟，貼上以下內容，==**其中有屬於個人的資訊，要記得修改**==，再存檔
-```
-[user]
-	name = 你的名字
-	email = NT帳號@fareastone.com.tw
-
-[https]
-    proxy = http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
-[http]
-    proxy = http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
-    sslVerify = false
-```
-* 同樣在 user 資料夾，新增 `.npmrc` 檔案
-* 用記事本開啟，貼上以下內容，==**其中有屬於個人的資訊，要記得修改**==，再存檔
-```
-proxy=http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
-https-proxy=http://NT帳號:NT密碼@fetfw.fareastone.com.tw:8080/
-strict-ssl=false
-```
-## 安裝 VSCode
-* 至 https://code.visualstudio.com/download 下載 VSCode
-* 一直按下一步
-* 注意下圖，其他部分全選
-![](https://i.imgur.com/H4mOBbq.png)
-
-## 建立 React 專案
-* 到 https://github.com/imjerry1995/react-workshop clone React 專案 
-* 打開自己的終端機(Command Line)，切換到自己的目錄或桌面
-* 用指令方式下載專案
+    people.age = 25;
+    console.log(people.age); // 25
     ```
-    git clone https://github.com/imjerry1995/react-workshop.git
-    ```
-    ![](https://github.com/imjerry1995/react-training-fetnet/blob/master/%E6%93%B7%E5%8F%96.PNG?raw=true)
-* 接著對著剛剛抓下來的`react-workshop`資料夾，右鍵選擇 `Open with Code`
-![](https://i.imgur.com/DhopdtY.png)
-* VSCode 打開之後，同時按下 Ctrl+\` ，會出現終端機
-![](https://i.imgur.com/XlZgj6j.png)
-    * 或者是最上方選單 Terminal > New Terminal
-    ![](https://i.imgur.com/Mm47GSy.png)
-* 在終端機的下拉式選單，選擇 `Select Default Shell`
-![](https://i.imgur.com/ehqtTvv.png)
-* 畫面上方會跳出三個，選擇 `Git Bash`
-![](https://i.imgur.com/zRpFzH3.png)
-
-* 在 VSCode 的終端機上下這個指令
-    ```
-    npm install
-    ```
-* 跑好之後，切換到練習的分支
-    ```
-    git checkout step-0
-    ```
-* 接著下
-    ```
-    npm start
-    ```
-* 接著瀏覽器自動開啟 localhost:3000 ，出現以下畫面就環境建置就大功告成
-![](https://i.imgur.com/YdKFghC.png)
+> 實務上，let 通常會搭配 for 迴圈中的 i 之宣告(因為會一直更動)；而大部分的變數則會使用 const 宣告(因為通常是要選取一個 DOM 或者是固定不變的資料)。但還是要視情況來宣告，會一直更動的值就要選擇 let
 
 
-## Git 指令
-### 下載專案
+## 再來是物件的處理
+### 解構賦值  Destructure
+> 應用陣列、物件上
+> 把陣列、物件裡面的東西給它新的名字
+
+#### 陣列 ::必須對應位置::
+
 ```
-git clone <>
+let arr = [1,2,3,4];
+
+let [first,second,third,fourth] = arr; //讓每個陣列元素都有對應的名稱
+
+console.log(first) // 1
+console.log(fourth)  //4
+
+//也可以只賦予特定位置的值，其他可以空白(必須對應位置)
+let [first, ,third ,] = arr; 
+
+console.log(third) //3
 ```
 
-### 切換分支（步驟）
+#### 物件 ::必須對應key 名稱::
 ```
-git checkout 分支名稱
+const obj = {
+	name: 'Jerry',
+	age: 24,
+	address: 'Taiwan'
+}
+
+let {name, age, address} = obj
+console.log(name) //Jerry
+
 ```
-* 若程式打錯或跟不上，可以切到目前階段的分支
+
+### 展開與其餘 
+### 展開 Spread 
+> 複製物件及陣列
+#### 陣列
+```
+// Spread 展開運算
+let arr1 = [1,2,3];
+let arr2 = [4,5,6]; // 如果陣列裡面放陣列會是二維
+
+//將 arr1 及 arr2 的物件攤開來，再放進去 arr3
+let arr3 = [...arr1,...arr2];
+console.log(arr3); [1,2,3,4,5,6]
+```
+
+#### 物件
+```
+const obj1 = {
+  a: 1,
+  b: 2
+}
+
+const obj2 = {
+  ...obj1,
+  c: 3
+}
+
+console.log(obj2); 
+//出來的結果為
+{
+    a:1,
+    b:2,
+    c:3
+}
+```
+
+### 反向展開(其餘) Rest
+> 跟解構搭配 ::Rest 只能放在最後面::
+
+```
+// Rest
+
+let arr7 = [1,2,3,4];
+let [first, ...rest] = arr;
+console.log(first); //1
+console.log(rest); //[2,3,4]
+
+//如果其中一個改成
+❌ ❌ ❌ let [first, ...rest, last] =arr; //錯
+//rest 只能放最後面
+
+let objrest = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+
+let {a, ...restobj} = objrest; 
+console.log(restobj);
+
+//結果為
+{
+  b: 2,
+  c: 3
+}
+```
+
+## 模版字符串（template literal）
+* 以前要將字串接在一起，我們會這麼做
+```
+const name = "Jerry"
+let old = "<h1><p>"+name+"</p></h1>"
+```
+* 但現在你可以使用 `` (重音符)取代 `""`
+    * 在`` 中可以直接寫 JS　，也可以任意斷行
+    * 使用 `${}` 包住JS程式 
+```
+const name = "Jerry"
+let new = `<h1>
+<p> ${name} </p>
+</h1>
+`
+```
+
+## 函式也有重大改變
+### 箭頭函式 Arrow function
+```
+// 過去宣告的方法
+var old = function (n){
+  return n;
+}
+
+//或是匿名函式
+function(n) {
+    return n;
+}
+```
+箭頭函式的方法
+```
+// 箭頭函式
+const arrow = (n) => {
+  return n;
+}
+
+// ‼️如果只有一個參數 括弧可以省略
+const oneargs = n => {
+  return n;
+}
+```
+
+### 好處
+```
+// 搭配 array
+let arr8 = [1,2,3,4,5];
+console.log(
+  arr8
+    .filter(function(value){
+      return value > 1;
+    })
+    .map(function (value) {
+      return value * 2; 
+    })
+)
+
+//改寫
+console.log(
+  arr8
+    .filter(value => {
+      return value > 1;
+    })
+    .map(value => {
+      return value * 2;
+    })
+);
+
+// 再簡寫 //‼️如果只要回傳一行 {}可以省略
+console.log(
+  arr8
+  .filter(value => value > 1)
+  .map(value => value * 2)
+);
+```
+
+# JSX 語法
+> JSX 是一種像是在"在JavaScript 中直接寫 HTML" 的語法
+
+### 以前我們寫 JS 的事件
+* 例如，點擊按鈕彈出 alert 視窗，我們可能會撰寫以下的程式碼
+```
+<button onclick="alert('hello')">點我</button>
+```
+* 或者會把 JS 獨立出來，透過 id 綁定相對應的DOM (事件監聽法)
+```
+<button id="btn">點我</button>
+<script>
+    document.getElementById('btn').addEventListener('click',function(){
+    alert('hello')
+    },false)
+</script>
+```
+以前由於不想讓 html 跟 JS 程式碼混雜在一起，會較推崇後者的作法，但在 React 的世界裡面，我們將焦點關注於"元件"本身。因此在 React 上，在撰寫 JS 的時候會與 UI(html) 綁定在一起
+
+### JSX
+* 可以在html tag中使用 JS 任何語法，只要用 `{}`包住即可，可以傳入變數、加減乘除，甚至是表達式
+
+    * 傳入變數
+    ```
+    const name = 'Jerry'
+    const hello = <h1>hello, {name}</h1>
+    ```
+    * 加減乘除
+    ```
+    const year = 2020
+    return ( //return 是 React 渲染函數的返回值
+        <div>
+            <p> 今年是民國 {year-1911} 年</p>
+        </div>
+    )
+    ```
+    * 三元表達式
+    ```
+    const isDone = true
+    return (  //return 是 React 渲染函數的返回值
+        isDone ? <h1>isDone 為 true 時才顯示</h1> : ''
+    )
+    ```
+* 在 React ，我們會將元件寫成　JSX　來表示
+    * 假如我們有個元件名稱為：Menu，那它會長以下這樣
+        ```
+        <Menu /> 
+        ```
+        * 像是一個HTML的 tag，只是名稱是自訂義
+    * 這個元素可能有相對應的事件動作
+        ```
+        <Menu onClick={()=>{
+         alert('hello')
+        }} /> 
+        ```
+        * 這裡的寫法就和以前將 click 寫在 html Tag 上一樣
+            * `""` 變成`{}`，包住JS 語法(此處是箭頭函式)
+        * 但這裡這樣寫 onClick 其實是 React 事先處理好的方法，透過撰寫成元件的 attribute  將JS 程式碼傳進去
+    * 除事件之外，元件還有其他 attribute 
+        * 加入 class 名稱
+            * 在 html tag 中我們使用 `class`，但在 React 的元件上，`class` 是保留字，要使用`className`
+            * 另外，使用 htmlFor 來替代 for，因為 for 也是保留字
 
 
-## 分支步驟內容
-1. [*step-0*](https://github.com/imjerry1995/react-workshop/tree/step-0) 新的 Project
-2. [*step-1*](https://github.com/imjerry1995/react-workshop/tree/step-1) 開始做奶茶 List
-3. [*step-2*](https://github.com/imjerry1995/react-workshop/tree/step-2) 奶茶 List 完成，開始元件化奶茶List
-4. [*step-3-homework*](https://github.com/imjerry1995/react-workshop/tree/step-3-homework) 奶茶 List 元件化完成，開始元件化其他元件
-5. [*step-3-homework-solution*](https://github.com/imjerry1995/react-workshop/tree/step-3-homework-solution) 畫面元件化完成
-6. [*step-4*](https://github.com/imjerry1995/react-workshop/tree/step-4) 畫面元件化完成，開始調整 Menu 並加入 LocalStorage
-7. [*step-5*](https://github.com/imjerry1995/react-workshop/tree/step-5) 調整 Menu 並加入 LocalStorage 完成，加入明細頁面
-8. [*step-6*](https://github.com/imjerry1995/react-workshop/tree/step-6) 明細頁規劃完成，開始加入 Router，並微調程式
-9. [*step-7*](https://github.com/imjerry1995/react-workshop/tree/step-7) Router加入完成，開始加入生命週期概念（串接資料）
-
-
-----
-## 若要建立空的 React 專案
-* 在 VSCode 的終端機下以下指令建立 React 專案
-```
-npx create-react-app my-app
-```
+        ```
+        <Menu className="menu" onClick={()=>{
+         alert('hello')
+        }} /> 
+        ```
+        * 自訂義的屬性 Props -> 這個我們會在上課提到
+        * 更多 attribute 可以參考[這裡](https://zh-hant.reactjs.org/docs/dom-elements.html)
+    * React　的元件也可以寫成，前後兩個tag 包起來
+        ```
+        <Menu> </Menu> 
+        ```
+        
+    * JSX 是如何做到讓瀏覽器看得懂，可以參考[這裡](https://zh-hant.reactjs.org/docs/jsx-in-depth.html)
