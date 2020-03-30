@@ -67,7 +67,7 @@ strict-ssl=false
     git clone https://github.com/imjerry1995/react-workshop.git
     ```
     ![](https://github.com/imjerry1995/react-training-fetnet/blob/master/%E6%93%B7%E5%8F%96.PNG?raw=true)
-* 接著對著剛剛抓下來的`react-workshop-master`資料夾，右鍵選擇 `Open with Code`
+* 接著對著剛剛抓下來的`react-workshop`資料夾，右鍵選擇 `Open with Code`
 ![](https://i.imgur.com/DhopdtY.png)
 * VSCode 打開之後，同時按下 Ctrl+\` ，會出現終端機
 ![](https://i.imgur.com/XlZgj6j.png)
