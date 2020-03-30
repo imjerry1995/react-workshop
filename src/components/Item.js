@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 
 const Item  = props => {
-    const item = {...props}
+    const {number, handleAdd, handleMinus} = {...props}
     return (
         <div className="item">
-          <p>奶茶 數量: {item.number}</p>
-          <button onClick={item.handleAdd}>+</button>
-          <button onClick={item.handleMinus}>-</button>
+          <p>奶茶 數量: {number}</p>
+          <button onClick={handleAdd}>+</button>
+          <button onClick={handleMinus}>-</button>
         </div>
     )
 }

@@ -33,9 +33,7 @@ class App extends Component {
           <li class="menu"><a href="">明細</a></li>
         </ul>
         <div class="show-item">
-            <div class="item">
-              <Item number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
-            </div>
+            <Item number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
         </div>
         <button class="done">OK</button>
       </div>
