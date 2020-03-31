@@ -94,6 +94,8 @@ strict-ssl=false
 * 接著瀏覽器自動開啟 localhost:3000 ，出現以下畫面就環境建置就大功告成
 ![](https://i.imgur.com/YdKFghC.png)
 
+## React 的先備知識
+[ES6與JSX簡介講義](https://github.com/imjerry1995/react-workshop/tree/ES6nJSX) 
 
 ## Git 指令
 ### 下載專案
