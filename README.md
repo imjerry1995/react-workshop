@@ -18,9 +18,10 @@ npm 也是一樣，輸入指令
 npm -v
 ```
 ![](https://i.imgur.com/b9jZUtS.png)
-成功會顯示版本，我們這個教學版本需要：
-==1. Node >= 8.0==
-==2. npm >= 5.6==
+
+* 成功會顯示版本，我們這個教學版本需要：
+1. **Node >= 8.0**
+2. **npm >= 5.6**
 
 ### 如果版本不夠
 
@@ -29,8 +30,8 @@ npm -v
 ## 安裝 Git
 * 至 https://git-scm.com/ 下載 Git
 * 打開安裝檔案，基本上一直按 Next
-    * ==注意== 路徑選擇預設路徑 `C:\Program Files\Git` 否則會有錯誤
-    * ![](https://i.imgur.com/4U2VrlY.png)
+    * *注意* 路徑選擇預設路徑 `C:\Program Files\Git` 否則會有錯誤
+    * ![](https://i.imgur.com/4U2VrlY.png) 遇到這個選擇他推薦的就好
 
 ## 設定 Node 及 npm 的 Proxy
 * 在自己的 user 資料夾，新增 `.gitconfig` 檔案
@@ -57,7 +58,7 @@ strict-ssl=false
 * 至 https://code.visualstudio.com/download 下載 VSCode
 * 一直按下一步
 * 注意下圖，其他部分全選
-![](https://i.imgur.com/H4mOBbq.png)
+	* ![](https://i.imgur.com/H4mOBbq.png)
 
 ## 建立 React 專案
 * 到 https://github.com/imjerry1995/react-workshop clone React 專案 
@@ -67,14 +68,14 @@ strict-ssl=false
     git clone https://github.com/imjerry1995/react-workshop.git
     ```
     ![](https://github.com/imjerry1995/react-training-fetnet/blob/master/%E6%93%B7%E5%8F%96.PNG?raw=true)
-* 接著對著剛剛抓下來的`react-workshop`資料夾，右鍵選擇 `Open with Code`
+* 接著對著剛剛抓下來的`react-workshop`資料夾，右鍵選擇 `以 Code 開啟`
 ![](https://i.imgur.com/DhopdtY.png)
 * VSCode 打開之後，同時按下 Ctrl+\` ，會出現終端機
 ![](https://i.imgur.com/XlZgj6j.png)
     * 或者是最上方選單 Terminal > New Terminal
     ![](https://i.imgur.com/Mm47GSy.png)
 * 在終端機的下拉式選單，選擇 `Select Default Shell`
-![](https://i.imgur.com/ehqtTvv.png)
+	* ![](https://i.imgur.com/ehqtTvv.png)
 * 畫面上方會跳出三個，選擇 `Git Bash`
 ![](https://i.imgur.com/zRpFzH3.png)
 
@@ -97,7 +98,7 @@ strict-ssl=false
 ## Git 指令
 ### 下載專案
 ```
-git clone <>
+git clone <github專案路徑>
 ```
 
 ### 切換分支（步驟）
