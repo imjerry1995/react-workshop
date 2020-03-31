@@ -64,8 +64,27 @@ render(){
 ### 方法二:將 function 獨立出來
 撰寫在 `constructor()` 與`render()` 之間
 * 這裡撰寫函式比較不同，要注意
-* 由於我們這個函數是要綁定在
-* (查一下)
+    * 如果我們直接用一般 JS Class 宣告 function 的方式，像是(這裡選讀，看不懂先跳過沒關係)
+        ```
+        addTotal(){
+            
+        }
+        ```
+        * 這樣在下方使用 this.addTotal 是會錯的
+            * 原因: 這種方式的宣告，這個函數裡面如果要使用 `this` ，是找不到這個元件本身的
+                * 也就是這種函式裡面的 this 會失蹤
+            * 解法: 在 constructor 使用 `.bind()` 綁定 this
+                ```
+                this.addTotal = this.addTotal.bind(this)
+                ```
+                * 這句程式的白話: 這個元件的 addTotal ，我要綁定 addTotal 裡面出現的 `this` 就代表這個元件本身
+    * 要使用*箭頭函式*
+        ```
+        addTotal() => {
+        
+        }
+        ```
+
 
     *App.js* 檔案
     ```
