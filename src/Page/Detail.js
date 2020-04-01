@@ -1,4 +1,5 @@
 import React, {Component} from 'react' // 引入 react 及 component
+import MenuList from '../components/MenuList'
 import ShowItem from '../components/ShowItem'
 
 class Detail extends Component { // 所有元件都繼承 Component
@@ -27,7 +28,10 @@ class Detail extends Component { // 所有元件都繼承 Component
 
   render(){ //渲染函數
     return (
-      <ShowItem number={this.state.total} />
+      <div className="app">
+        <MenuList />
+        <ShowItem number={this.state.total} />
+      </div>
     )
   }
 }

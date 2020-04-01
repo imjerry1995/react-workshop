@@ -4,7 +4,6 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import MenuList from './components/MenuList'
 import './App.css';
 import './index.css';
 import Order from './Page/Order';
@@ -43,13 +42,10 @@ class App extends Component {
   render(){
     return (
       <BrowserRouter>
-          <Switch>
-            <div className="app">
-              <MenuList />
-              <Route exact path="/" component={Order} />
-              <Route path="/detail" component={Detail} />
-            </div>
-          </Switch>
+        <Switch>
+          <Route exact path="/" component={Order} />
+          <Route path="/detail" component={Detail} />
+        </Switch>
       </BrowserRouter>
     )
   }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react' // 引入 react 及 component
+import MenuList from '../components/MenuList'
 import ShowItem from '../components/ShowItem'
 import Done from '../components/Done'
 
@@ -43,7 +44,8 @@ class Order extends Component { // 所有元件都繼承 Component
 
   render(){ //渲染函數
     return (
-      <div>  {/* return 只能回傳一個根節點 */}
+      <div className="app">
+        <MenuList />
         <ShowItem number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal} isOrder={true}/>
         <Done handleSubmit={this.handleSubmit}/>
       </div>

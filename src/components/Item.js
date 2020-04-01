@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 const Item  = props => {
-    const {number2, handleAdd2, handleMinus2} = props
+    const {number2, handleAdd2, handleMinus2} = props
     return (
         <div className="item">
           <p>奶茶 數量: {number2}</p>
