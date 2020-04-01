@@ -38,6 +38,19 @@
     * 存檔之後，可以發現頁面奶茶數量變成`0`
     * 可以試著將 state 數字改成別的數字
 
+## 更改 state 值
+絕對不是 ~~this.state = 新值~~ 這樣XD
+* 在 React 中，要更動 state，**不能直接使用"指定"的方式**，要透過 `this.setState()` 函數改變
+
+    ```
+    this.setState({
+        total: this.state.total+1
+    })
+    ```
+    * `this.setState()` 傳入的是一個物件，React 會比對這個傳入的新的物件，來跟舊的 state 物件來比對，不同就會採用新的物件
+    * 因此這裡的邏輯是，新的物件的 total 要等於 "目前的 state 的值+1"(this.state.total+1) 
+    * 把這個`this.setState()` 函數放到我們觸發 button 的方法就可以囉(以下綁定方法)
+
 ## 綁定方法
 ### 方法一:寫在元件上
 
@@ -49,7 +62,9 @@ render(){
         <div className="item">
           <p>奶茶 數量: {this.state.total}</p>
           <button onClick={()=>{
-
+            this.setState({
+                total: this.state.total
+            })
           }}>+</button>
         </div>
       </div>
@@ -67,23 +82,30 @@ render(){
     * 如果我們直接用一般 JS Class 宣告 function 的方式，像是(這裡選讀，看不懂先跳過沒關係)
         ```
         addTotal(){
-            
+            this.setState({
+                total: this.state.total
+            })
         }
+        
+        註:JS class 中的方法宣告方式不需要加上 function
         ```
-        * 這樣在下方使用 this.addTotal 是會錯的
-            * 原因: 這種方式的宣告，這個函數裡面如果要使用 `this` ，是找不到這個元件本身的
+        * 這樣在元件的 `render()` 使用 this.addTotal 是會錯的
+            * 原因: 這種方式的宣告，這個函數裡面如果要使用 `this` 獲取此元件的其他 function，是找不到要呼叫的那個 function 的
                 * 也就是這種函式裡面的 this 會失蹤
             * 解法: 在 constructor 使用 `.bind()` 綁定 this
                 ```
                 this.addTotal = this.addTotal.bind(this)
                 ```
-                * 這句程式的白話: 這個元件的 addTotal ，我要綁定 addTotal 裡面出現的 `this` 就代表這個元件本身
-    * 要使用*箭頭函式*
+                * 這句程式的白話: 這個元件的 `this.addTotal` ，我要綁定 addTotal 裡面出現的 `this`， 就代表這個元件本身
+    * **要使用*箭頭函式***
         ```
         addTotal() => {
-        
+            this.setState({
+                total: this.state.total
+            })
         }
         ```
+        * (進階)箭頭函式中的 `this` ，會去獲取此 this 存在該區塊的外圍區塊的 this。此箭頭函式區塊的外圍區塊就是元件本身，因此這個 this 所代表的就是元件本身。
 
 
     *App.js* 檔案
@@ -128,18 +150,7 @@ render(){
         * 使用 `this.addTotal`
             * 這裡的 this 就是"這個元件"，所以是這個元件的 function
 
-## 更改 state 值
-絕對不是 ~~this.state = 新值~~ 這樣XD
-* 在 React 中，要更動 state，**不能直接使用"指定"的方式**，要透過 `this.setState()` 函數改變
 
-    ```
-    this.setState({
-        total: this.state.total+1
-    })
-    ```
-    * `this.setState()` 傳入的是一個物件，React 會比對這個傳入的新的物件，來跟舊的 state 物件來比對，不同就會採用新的物件
-    * 因此這裡的邏輯是，新的物件的 total 要等於 "目前的 state 的值+1"(this.state.total+1) 
-    * 把這個`this.setState()` 函數放到我們觸發 button 就可以囉
 
 *試著自己新增一個 -１的函數並綁定吧！*
 
