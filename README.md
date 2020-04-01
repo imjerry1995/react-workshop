@@ -125,7 +125,9 @@ render(){
       }
 
       addTotal = () => {
-        
+        this.setState({
+            total: this.state.total
+        })
       }
 
 
