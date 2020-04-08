@@ -5,24 +5,26 @@ class MenuList extends Component {
   constructor(props){
     super(props)
     this.state = {
-      links: [{
+      menu: [
+        {
           title: "點餐",
           link: "/"
         },
         {
           title: "明細",
           link: "/detail"
-        }
+        },
       ]
     }
+
   }
 
   render(){
     return (
       <ul className="menu-list">
         {
-          this.state.links.map((item,index)=>{
-            return <Menu key={index} title={item.title} link={item.link}/>
+          this.state.menu.map((element,index)=>{
+            return <Menu key={index} menu={element}/>
           })
         }
       </ul>

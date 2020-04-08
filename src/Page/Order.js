@@ -1,12 +1,11 @@
-import React, {Component} from 'react' // 引入 react 及 component
+import React, {Component} from 'react'
 import MenuList from '../components/MenuList'
 import ShowItem from '../components/ShowItem'
 import Done from '../components/Done'
 
-class Order extends Component { // 所有元件都繼承 Component
-  constructor(props){ // 建構式
+class Order extends Component {
+  constructor(props){
     super(props)
-
     this.state = {
       total: 0
     }
@@ -33,16 +32,14 @@ class Order extends Component { // 所有元件都繼承 Component
   }
 
   handleSubmit = () =>{
-    //localStorage.setItem("total",this.state.total);
-    let itemObject = {
-      name: "奶茶",
+    const data = {
+      item: "奶茶",
       total: this.state.total
     }
-    itemObject = JSON.stringify(itemObject)
-    localStorage.setItem("total", itemObject);
+    localStorage.setItem("data",JSON.stringify(data))
   }
 
-  render(){ //渲染函數
+  render(){
     return (
       <div className="app">
         <MenuList />

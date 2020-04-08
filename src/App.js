@@ -1,54 +1,23 @@
 import React, {Component} from 'react'
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from 'react-router-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom'
 import './App.css';
 import './index.css';
-import Order from './Page/Order';
-import Detail from './Page/Detail';
+import Order from './Page/Order'
+import Detail from './Page/Detail'
 
-class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      total: 0
-    }
-
-  }
-
-  addTotal = () => {
-    this.setState({
-      total: this.state.total + 1
-    })
-  }
-
-  minusTotal = () => {
-    this.setState({
-      total: this.state.total - 1
-    })
-  }
-
-  handleSubmit = () =>{
-    let itemObject = {
-      name: "奶茶",
-      total: this.state.total
-    }
-    itemObject = JSON.stringify(itemObject)
-    localStorage.setItem("total", itemObject)
-  }
-
-  render(){
-    return (
+const App = props =>{
+  return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Order} />
-          <Route path="/detail" component={Detail} />
+          <Route exact path="/" component={Order}/>
+          <Route exact path="/detail" component={Detail}/>
         </Switch>
       </BrowserRouter>
-    )
-  }
+    ) 
 }
 
 export default App
