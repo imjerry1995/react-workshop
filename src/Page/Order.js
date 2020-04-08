@@ -12,6 +12,14 @@ class Order extends Component {
 
   }
 
+  componentDidMount() {
+    console.log("Order:元件初始化掛載")
+  }
+
+  componentDidUpdate() {
+    console.log("Order:元件觸發更新，更新完後掛載")
+  }
+
   addTotal = () => {
     this.setState({
       total: this.state.total + 1
