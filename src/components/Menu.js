@@ -1,11 +1,10 @@
 import React, {Component} from 'react'
 
 const Menu  = props => {
+		console.log(props)
+		const {link,title} = props.menu
     return (
-      <div>
-        <li className="menu"><a href="">點餐</a></li>
-        <li className="menu"><a href="">明細</a></li>
-      </div>
+      <li className="menu"><a href={link}>{title}</a></li>
     )
 }
 
