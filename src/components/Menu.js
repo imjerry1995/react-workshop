@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 const Menu  = props => {
-		console.log(props)
 		const {link,title} = props.menu
     return (
-      <li className="menu"><a href={link}>{title}</a></li>
+      <li className="menu"><Link to={link}>{title}</Link></li>
     )
 }
 

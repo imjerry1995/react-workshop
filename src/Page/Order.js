@@ -36,7 +36,7 @@ class Order extends Component {
     return (
       <div className="app">
         <MenuList />
-        <ShowItem number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal}/>
+        <ShowItem number={this.state.total} handleAdd={this.addTotal} handleMinus={this.minusTotal} isOrder={true}/>
         <Done handleSubmit={this.handleSubmit}/>
       </div>
     )

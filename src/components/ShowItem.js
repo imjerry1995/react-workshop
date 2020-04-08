@@ -10,7 +10,7 @@ class ShowItem extends Component {
   render(){
     return (
       <div className="show-item">
-        <Item number2={this.props.number} handleAdd2={this.props.handleAdd} handleMinus2={this.props.handleMinus} />
+        <Item number2={this.props.number} handleAdd2={this.props.handleAdd} handleMinus2={this.props.handleMinus} isOrder={this.props.isOrder}/>
       </div>
     )
   }
