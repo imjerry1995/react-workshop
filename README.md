@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # React 環境建置
 
 ## 安裝 Node 
@@ -128,10 +127,3 @@ git checkout 分支名稱
 ```
 npx create-react-app my-app
 ```
-=======
-# step-7 Router加入完成，開始加入生命週期概念（串接資料）
-
-## React 元件生命週期
-http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
-
->>>>>>> step-7
